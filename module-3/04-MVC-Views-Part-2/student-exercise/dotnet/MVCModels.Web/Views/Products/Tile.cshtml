@@ -1,0 +1,74 @@
+﻿@model IList<Product>
+@{
+    ViewData["Title"] = "Tile";
+}
+<h2>All Products</h2>
+
+<div id="masonry-page">
+
+    @{
+        ViewData["Action"] = "";
+        ViewData["Controller"] = "";
+    }
+    <partial name="_Filters" />
+
+    <!-- Container for all of the Products -->
+    <div id="grid" class="main-content">
+
+        <!-- The following HTML shows different examples of what HTML
+            could be rendered based on different rules. For purposes
+            of demonstration we've written it out so you can see it
+            when you load the page up. -->
+
+        @foreach (Product product in Model)
+        {
+            string s = "tile ";
+            <!-- Standard Product -->
+            if (product.IsTopSeller)
+            {
+                s += "top-seller ";
+            }
+            if (product.RemainingStock <= 0)
+            {
+                s += "sold-out ";
+            }
+        <div class="@s">
+            @if (product.RemainingStock <= 0)
+            {
+                <span class="banner">Sold Out</span>
+            }
+            <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
+            <a class="product-image" href="Detail/@product.Id">
+                <img src="/images/product-images/@product.ImageName" />
+            </a>
+            <div class="details">
+                <p class="name"><a href="Detail/@product.Id">@product.Name</a></p>
+
+                <div class="rating">
+                    <!-- .filled will make the star solid -->
+                    @for (int rating = (int)product.AverageRating; rating > 0; rating--)
+                    {
+                        <span class="filled">&#9734;</span>
+
+                    }
+                    @for (int rating = 5 - (int)product.AverageRating; rating > 0; rating--)
+                    {
+                        <span>&#9734;</span>
+                    }
+                </div>
+                @if (product.IsTopSeller)
+                {
+                    <br />
+                    <p class="product-alert">Top Seller</p>
+                }
+                @if (product.RemainingStock > 0 && product.RemainingStock <= 5)
+                {
+                    <p class="product-alert">@product.RemainingStock remaining!</p>
+                }
+
+                <p class="price">$@product.Price</p>
+            </div>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿@model Day2SuccessViewModel
+
+@{
+    ViewData["Title"] = "Success";
+}
+
+@if (Model.Error != null)
+{
+    <h2>Error Adding @Model.Name</h2>
+}
+else
+{
+    <h2>Successfully Added @Model.Name</h2>
+}
+

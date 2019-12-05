@@ -1,0 +1,17 @@
+﻿@model CityDetailViewModel
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<partial name="_CityForm" for="@Model.CityListVM" />
+
+<hr />
+<h2>Cities</h2>
+<ul>
+    @foreach (var city in Model.Cities)
+    {
+    <li>@city.Name</li>
+    }
+</ul>
+

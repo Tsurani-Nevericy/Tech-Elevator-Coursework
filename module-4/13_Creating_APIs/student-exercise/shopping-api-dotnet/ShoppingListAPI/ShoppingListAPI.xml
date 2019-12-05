@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShoppingListAPI</name>
+    </assembly>
+    <members>
+        <member name="M:ShoppingListAPI.Controllers.ItemController.GetAll">
+            <summary>
+            Get all the product reviews
+            </summary>
+            <returns>List of all the product reviews</returns>
+        </member>
+        <member name="M:ShoppingListAPI.Controllers.ItemController.Create(ShoppingListAPI.Models.Item)">
+            <summary>
+            Adds a product review
+            </summary>
+            <param name="productReview">The product review to be added</param>
+            <returns>The created product review</returns>
+        </member>
+    </members>
+</doc>

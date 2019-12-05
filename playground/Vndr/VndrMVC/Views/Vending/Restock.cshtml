@@ -1,0 +1,23 @@
+﻿
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/Restock.css" />
+}
+
+@section Scripts {
+    <script src="~/js/Restock.js" defer></script>
+}
+
+@section Title{
+    Restock
+}
+
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model VndrMVC.RestockViewModel
+
+<div class="container modifyContainer">
+    <form asp-controller="Vending" asp-action="Restock" method="post">
+        <label asp-for="Qty"></label>
+        <input asp-for="Qty" class = "form-control" />
+        <button type="submit" class="btn btn-default" id="restockSave">Restock</button>
+    </form>    
+</div>

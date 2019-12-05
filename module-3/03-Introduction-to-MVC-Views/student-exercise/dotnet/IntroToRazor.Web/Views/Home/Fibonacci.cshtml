@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Fibonacci";
+    int max = (int)ViewData["max"];
+}
+
+<nav id="page-options">
+    <ul>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="20">20</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="50">50</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="100">100</a></li>
+    </ul>
+</nav>
+
+
+<ul id="fibonacci">
+    @{
+        int nSum = 0;
+        int nFirst = 0;
+        int nSecond = 1;
+        while (max > nFirst)
+        {
+            <li>@nFirst</li>
+            nSum = nFirst + nSecond;
+            nFirst = nSecond;
+            nSecond = nSum;
+        }
+    }

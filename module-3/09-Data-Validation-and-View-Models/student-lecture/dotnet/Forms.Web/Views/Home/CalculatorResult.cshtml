@@ -1,0 +1,10 @@
+﻿@model CalculatorModel
+@{
+    ViewData["Title"] = "CalculatorResult";
+}
+
+<h2>CalculatorResult</h2>
+
+<p>You typed in <strong>@Model.NumberToConvert @Model.StartingUnit</strong>. When
+    converted to <strong>@Model.EndingUnit</strong>, it is
+    <strong>@Model.GetConvertedValue()  @Model.EndingUnit</strong></p>

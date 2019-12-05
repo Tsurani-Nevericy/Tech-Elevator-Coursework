@@ -1,0 +1,22 @@
+﻿@model IList<ShoppingCartItem>
+
+@{
+    ViewData["Title"] = "ShowCart";
+}
+
+<h2>Shopping Cart - <a asp-controller="Store" asp-action="Index">Continue Shopping</a></h2>
+
+@foreach (var item in Model)
+{
+    <section>
+        <div>
+            @item.Product.Name
+        </div>
+        <div>
+            @item.Product.Cost.ToString("C")
+        </div>
+        <div>
+            Qty: @item.Quantity
+        </div>
+    </section>
+}

@@ -1,0 +1,46 @@
+﻿@model FilmViewModel
+@{
+    ViewData["Title"] = "Index";
+    string GetActiveString(bool isActive)
+    {
+        return isActive ? "Yes" : "No";
+    }
+}
+
+@*<h2>Index</h2>*@
+
+    <form asp-controller="Films" asp-action="SearchResult" method="get">
+
+        <label asp-for="MinimumLength">Minimum Length: </label>
+        <input asp-for="MinimumLength" />
+        <label asp-for="MaximumLength">Maximum Length: </label>
+        <input asp-for="MaximumLength" />
+        @*<label asp-for="SortBy">Order By: </label>
+        <input asp-for="SortBy" />*@
+        <select asp-for="Genre" asp-items="Model.Genres"></select>
+        <button>Search</button>
+
+    </form>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Release Year</th>
+        <th>Length</th>
+        <th>Rating</th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (Film f in Model.Films)
+        {
+<tr>
+    <td>@f.Title</td>
+    <td>@f.Description</td>
+    <td>@f.ReleaseYear</td>
+    <td>@f.Length</td>
+    <td>@f.Rating</td>
+</tr>
+        }
+    }
+</table>

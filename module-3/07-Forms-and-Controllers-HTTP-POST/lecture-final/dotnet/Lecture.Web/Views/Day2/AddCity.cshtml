@@ -1,0 +1,29 @@
+﻿@*7. Bind this view to a City model and display the form fields. *@
+@model City
+
+@{
+    ViewData["Title"] = "AddCity";
+}
+
+<h2>AddCity</h2>
+
+@* 2. Add a form that POSTs data to Day2/AddCity *@
+<form asp-controller="day2" asp-action="addcity" method="post">
+@*<form method="post"  action="/day2/addcity">*@
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+
+    <label asp-for="CountryCode"></label>
+    <input asp-for="CountryCode" />
+
+    <label asp-for="District"></label>
+    <input asp-for="District" />
+
+    <label asp-for="Population"></label>
+    <input asp-for="Population" />
+
+
+    <input type="submit" value="Add" class="btn btn-primary"/>
+</form>
+

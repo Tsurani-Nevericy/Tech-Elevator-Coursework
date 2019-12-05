@@ -1,0 +1,15 @@
+﻿@using ParkGeek.DAL.Models;
+@model Park
+@section Title {
+    National Park Geek
+}
+
+<h1>Detail</h1>
+
+<img src="~/img/parks/@(Model.ParkCode.ToLower()).jpg" />
+<h2>@Model.ParkName</h2>
+<p>@Model.ParkDescription</p>
+<br />
+<div>
+    <img src="~/img/weather/@Model" />
+</div>

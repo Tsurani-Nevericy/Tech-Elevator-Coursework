@@ -1,0 +1,18 @@
+﻿@model CitySearchModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Search</h2>
+
+<form asp-action="results" asp-controller="home" method="get">
+
+    <label asp-for="CountryCode"></label>
+    <input asp-for="CountryCode" placeholder="e.g. USA" />
+    
+    <label asp-for="District"></label>
+    <input asp-for="District" />
+
+    <input type="submit" value="Submit" />
+</form>

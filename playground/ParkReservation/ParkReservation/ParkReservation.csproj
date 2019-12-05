@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Security\Security.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DAO\Scripts\" />
+  </ItemGroup>
+
+</Project>

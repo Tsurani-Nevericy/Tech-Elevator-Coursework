@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    @model IList<Product>;
+}
+
+<h2>All Products</h2>
+
+<div id="card-page">
+
+    @{
+        ViewData["Action"] = "";
+        ViewData["Controller"] = "";
+    }
+    <partial name="_Filters" />
+
+    <div class="main-content">
+
+        <!-- Container for Sorting Choices
+            Each link should take the user to this current page and use any combination of the following
+            querystring parameters to sort the page:
+            - sortOrder (string) - PriceLowToHigh,PriceHighToLow,RatingHighToLow
+        -->
+        <div id="sorting-options">
+            <h3>Sort By</h3>
+            <ul>
+                <li><a href="?sortOrder=PriceLowToHigh">Price - Low to High</a></li>
+                <li><a href="?sortOrder=PriceHighToLow">Price - High to Low</a></li>
+                <li><a href="?sortOrder=RatingHighToLow">Rating - High to Low</a></li>
+            </ul>
+        </div>
+
+        <!-- Container for all of the Products -->
+        <div id="grid">
+            <!-- The following HTML shows different examples of what HTML
+         could be rendered based on different rules. For purposes
+         of demonstration we've written it out so you can see it
+         when you load the page up. -->
+            @foreach (Product product in Model)
+            {
+                <!-- Standard Product (assuming no special cases) -->
+                @if (product.RemainingStock <= 0)
+                {
+                    <div class="tile sold-out">
+                    <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->                    
+                    <span class="banner">Sold Out</span>
+                    <a class="product-image" href="Products/Detail/@product.Id">
+                        <img src="/images/product-images/@product.ImageName" />
+                    </a>
+                    <div class="details">
+                        <p class="name">@product.Name</p>
+
+                        <!-- .filled will make the star solid -->
+                        <div class="rating">
+                            @for (int rating = (int)product.AverageRating; rating > 0; rating--)
+                            {
+                                <span class="filled">&#9734;</span>
+                            }
+                            @for (int rating = 5 - (int)product.AverageRating; rating > 0; rating--)
+                            {
+                                <span>&#9734;</span>
+                            }
+                        </div>
+
+                        <p class="price">$@(product.Price)</p>
+                    </div>
+                </div>
+                }
+                else
+                {
+                    <div class="tile ">
+                    <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
+                    @if (product.IsTopSeller)
+                    {
+                        <span class="banner top-seller">Top Seller!</span>
+                    }
+                    <a class="product-image" href="Products/Detail/@product.Id">
+                        <img src="/images/product-images/@product.ImageName" />
+                    </a>
+                    <div class="details">
+                        <p class="name">@product.Name</p>
+
+                        <!-- .filled will make the star solid -->
+                        <div class="rating">
+                            @for (int rating = (int)product.AverageRating; rating > 0; rating--)
+                            {
+                                <span class="filled">&#9734;</span>
+                            }
+                            @for (int rating = 5 - (int)product.AverageRating; rating > 0; rating--)
+                            {
+                                <span>&#9734;</span>
+                            }
+                        </div>
+                        @if (product.RemainingStock > 0 && product.RemainingStock <= 5)
+                        {
+                            <span class="product-alert">Only @product.RemainingStock left!</span>
+                        }
+
+                        <p class="price">$@(product.Price)</p>
+                    </div>
+                </div>
+                }            
+            }
+        </div>
+    </div>
+</div>

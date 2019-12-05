@@ -1,0 +1,48 @@
+﻿@model VendingService.IVendingMachine
+
+@{
+    string login = "Login";
+    if (Model.CurrentUser != null)
+    {
+        login = "Logout - " + Model.CurrentUser.FirstName + " " + Model.CurrentUser.LastName + " (" + Model.Role.RoleName.ToString() + ")";
+    }
+}
+
+<ul class="navbar-nav mr-auto">
+    @if (Model.Role.IsExecutive || Model.Role.IsCustomer || Model.Role.IsServiceman || Model.Role.IsAdministrator)
+    {
+        <li class="nav-item active homeNav">
+            <a class="nav-link" href="~/Vending/Index">Home <span class="sr-only">(current)</span></a>
+        </li>
+    }
+    @if (Model.Role.IsExecutive)
+    {
+        <li class="nav-item reportNav">
+            <a class="nav-link" href="~/Vending/Report">Report</a>
+        </li>
+        <li class="nav-item logNav">
+            <a class="nav-link" href="~/Vending/Log">History</a>
+        </li>
+    }
+
+    @if (Model.Role.IsServiceman)
+    {
+        <li class="nav-item modifyNav">
+            <a class="nav-link" href="~/Vending/Restock">Restock</a>
+        </li>
+    }
+    @if (!Model.Role.IsUnknown)
+    {
+        <li class="nav-item aboutNav">
+            <a class="nav-link" href="~/Vending/About">About</a>
+        </li>
+    }
+</ul>
+@if (!Model.Role.IsUnknown)
+{
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item reportNav">
+            <a class="nav-link" href="~/User/Login/">@login</a>
+        </li>
+    </ul>
+}

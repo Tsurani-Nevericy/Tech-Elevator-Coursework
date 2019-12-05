@@ -1,0 +1,90 @@
+:root {
+    --blue: #00adee;
+    --grey: #505355;
+}
+  
+* {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  background-color: rgba(192, 192, 192, 0.1);
+}
+
+body {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+#te-logo {
+  width: 56vp;
+}
+
+#student-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "one   one   two"
+  "three three four"
+  "five  five  five";
+  row-gap: 10px;
+  column-gap: 10px;
+  margin: 15px;
+}
+.headline {  
+  color: var(--grey);
+}
+#student-quote { 
+  grid-area: one;
+  color: var(--grey);
+  font-size: 24px;
+  width: 100%;
+}
+
+#student-picture img { 
+  grid-area: two;
+  height: 100%;
+  margin-left: 12%;
+  border-radius: 50%;
+}
+        
+#student-profile {
+  grid-area: three;
+  width: 100%;
+}
+
+
+#student-contact p {
+  grid-area: four;
+  justify-content: center;
+  text-align: center;
+}
+
+#experience {
+  grid-area: five;
+  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-left: 8px;
+  padding-right: 13px;
+}
+#experience > div:nth-child(1) {
+  width: 33%;    
+}
+#experience > div:nth-child(2) {
+  width: 33%;
+}
+#experience > div:nth-child(3) {
+  width: 33%;
+}
+#experience > div:nth-child(4) {
+  width: 33%;
+}
+
+main > div > div > div > h3 {
+  color: var(--blue);
+}
+

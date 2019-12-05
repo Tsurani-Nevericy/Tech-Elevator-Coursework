@@ -1,0 +1,30 @@
+
+@{
+    ViewData["Title"] = "Current Time";
+    string lastName = "Gates";
+    string firstName = "Bill";
+}
+
+<h2>Current Time</h2>
+
+<p>This page renders the current date and time: @DateTime.Now</p>
+
+<p>Welcome @firstName @lastName</p>
+
+<!-- HTML COMMENT RENDERS ON THE PAGE -->
+@* RAZOR COMMENT IS SERVER-SIDE AND DOES NOT RENDER IN BROWSER *@
+
+@if (DateTime.Now.Hour < 12)
+{
+    <p>Good morning @firstName</p>
+}
+else
+{
+    <p>Good afternoon/evening @firstName!</p>
+}
+
+
+@for (int i = 0; i < 1000; i++)
+{
+    <p>Hello @firstName</p>
+}

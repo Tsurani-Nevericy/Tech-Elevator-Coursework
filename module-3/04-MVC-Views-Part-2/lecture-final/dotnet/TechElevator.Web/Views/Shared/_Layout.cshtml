@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a asp-controller="Films" asp-action="Index">All Films</a></li>
+            <li><a asp-controller="Films" asp-action="Detail" asp-route-id="solo">Solo</a></li>
+            <li><a asp-controller="Films" asp-action="Detail" asp-route-id="swviii">The Last Jedi</a></li>
+            <li><a asp-controller="Films" asp-action="Detail" asp-route-id="rogue-one">Rogue One</a></li>
+            <li><a asp-controller="Films" asp-action="Detail" asp-route-id="swix">Episode 9</a></li>
+        </ul>
+    </nav>
+    @RenderBody()
+</body>
+</html>

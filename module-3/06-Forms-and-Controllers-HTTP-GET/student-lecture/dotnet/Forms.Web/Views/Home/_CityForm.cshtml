@@ -1,0 +1,10 @@
+﻿@model CityListViewModel
+
+<form asp-controller="Home" asp-action="Detail" method="get">
+    <label asp-for="District">District:</label>
+    <input asp-for="District" id ="District" name="District" />
+    <label asp-for="CountryCode">Country Code:</label>
+    <select asp-for="CountryCode" asp-items="Model.CountryCodes" name="CountryCode" id="CountryCode"></select>
+    <button>Get Cities</button>
+</form>
+

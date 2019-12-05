@@ -1,0 +1,34 @@
+﻿.modifyHeading {
+    text-align: center;
+    padding-bottom: 10px;
+    display: block;
+}
+.selectItem {
+    padding-bottom: 10px;
+}
+.modifyTitle {
+    display: block;
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#restockSave {
+    margin: 10px;
+    display: block;
+}
+
+#qty {
+    text-align: center;
+    width: 100px;
+    display: inline;
+    margin: 10px;
+
+}
+
+#qtyLbl {
+    text-align: center;
+    display: inline;
+    margin: 10px;
+}

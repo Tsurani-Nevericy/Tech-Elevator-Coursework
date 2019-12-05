@@ -1,0 +1,23 @@
+﻿@model CitySearch
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@*2. Create a view to display the empty form. *@
+
+
+@*3. Add a blank form with a button that the user can click to go to the 
+     searchresult page. *@
+<form method="get" asp-controller="day1" asp-action="searchresult">
+
+    @*8. Display the search properties as input fields. *@
+    <label asp-for="CountryCode"></label>
+    <input asp-for="CountryCode" />
+
+    <label asp-for="District"></label>
+    <input type="password" asp-for="District" />
+
+    <input type="submit" value="Submit" />
+</form>

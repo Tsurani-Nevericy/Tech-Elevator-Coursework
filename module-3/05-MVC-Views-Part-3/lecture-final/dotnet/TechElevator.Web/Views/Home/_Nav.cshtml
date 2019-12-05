@@ -1,0 +1,9 @@
+﻿@model List<Post>
+
+<a asp-controller="Home" asp-action="Tile">Tile</a> @("|")
+<a asp-controller="Home" asp-action="Table">Table</a>
+
+@foreach (var post in Model)
+{
+    <div><a>@post.Caption</a></div>
+}

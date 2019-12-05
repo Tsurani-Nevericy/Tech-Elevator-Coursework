@@ -1,0 +1,29 @@
+﻿@*12. Bind to a list of city *@
+@model IList<City>
+@{
+    ViewData["Title"] = "CitiesByCountry";
+}
+
+<h2>Cities By Country</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>District</td>
+            <td>Population</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var city in Model)
+        {
+            <tr>
+                <td>@city.CityId</td>
+                <td>@city.Name</td>
+                <td>@city.District</td>
+                <td>@city.Population</td>
+            </tr>
+        }
+    </tbody>
+</table>

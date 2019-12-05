@@ -1,0 +1,45 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+<h2>Product Page</h2>
+
+<!-- Container for the Product -->
+<div id="product-detail">
+    <img src="/images/product-images/@Model.ImageName" />
+    <div class="product-description">
+        <h3>
+            @Model.Name
+        </h3>
+
+        <!-- .filled will make the star solid -->
+        <div class="rating">
+            @for (int rating = (int)Model.AverageRating; rating > 0; rating--)
+            {
+                <span class="filled">&#9734;</span>
+            }
+            @for (int rating = 5 - (int)Model.AverageRating; rating > 0; rating--)
+            {
+                <span>&#9734;</span>
+            }
+        </div>
+
+        <!-- Include this if the product has a Remaining Stock of 5 or less -->
+        @if (Model.RemainingStock > 0 && Model.RemainingStock <= 5)
+        {
+            <p class="alert-remaining">BUY NOW! Only @Model.RemainingStock left!</p>
+        }
+        <p class="description">@Model.Description</p>
+        <p class="price">$@Model.Price</p>
+
+        @if (Model.RemainingStock > 0)
+        {
+            <button class="action">Add to Cart</button>
+        }
+        else
+        {
+            <button disabled>Sold Out</button>
+        }
+
+    </div>
+</div>

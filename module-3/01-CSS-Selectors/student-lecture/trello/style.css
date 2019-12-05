@@ -1,0 +1,22 @@
+* {
+    border: greenyellow 1px solid;
+}
+
+
+
+/* h2 {
+    border: red 1px solid;
+} */
+
+/* #uniqueIdIsMe {
+    border: red 100px solid;
+} */
+
+
+.chris, h2, h1, div {
+    border: blue 10px solid;
+}
+
+h1 {
+    font-weight: 900;
+}

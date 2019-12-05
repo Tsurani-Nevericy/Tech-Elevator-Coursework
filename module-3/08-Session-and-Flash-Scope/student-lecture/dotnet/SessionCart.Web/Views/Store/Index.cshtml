@@ -1,0 +1,24 @@
+﻿@model IList<Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Garage Sale - <a asp-controller="Store" asp-action="ShowCart">View Cart</a></h2>
+
+@foreach(var product in Model)
+{
+    <section>
+        <form asp-controller="Store" asp-action="AddToCart" method="post">
+            <div>
+                @product.Name
+            </div>
+            <div>
+                @product.Cost.ToString("C")
+            </div>
+            <input type="text" name="productId" value="@product.Id" hidden />
+            <button>Add</button>
+        </form>
+    </section>
+}
+

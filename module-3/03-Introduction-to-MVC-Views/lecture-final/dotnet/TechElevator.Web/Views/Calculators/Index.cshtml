@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Metric to Imperial";
+}
+
+<h2>Metric to Imperial</h2>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Metric Unit</th>
+            <th>Imperial Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i <= 1000; i += 15)
+        {
+            <tr>
+                <td>@i km/h</td>
+                <td>@((int)(i * 0.62)) mph</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

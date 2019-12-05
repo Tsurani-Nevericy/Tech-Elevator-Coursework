@@ -1,0 +1,58 @@
+﻿@model RegistrationViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Users" asp-action="Register" method="post">
+
+    <div class="form-group">
+        <label asp-for="FirstName">First Name</label>
+        <input asp-for="FirstName" class="form-control" placeholder="enter first name"/>
+        <span asp-validation-for="FirstName"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" class="form-control" placeholder="enter last name"/>
+        <span asp-validation-for="LastName"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="enter email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmailConfirm">Confirm Email</label>
+        <input asp-for="EmailConfirm" class="form-control" placeholder="confirm email address" />
+        <span asp-validation-for="EmailConfirm"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" class="form-control" placeholder="enter password"/>
+        <span asp-validation-for="Password"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PassConfirm">Confirm Password</label>
+        <input asp-for="PassConfirm" class="form-control" placeholder="confirm password"/>
+        <span asp-validation-for="PassConfirm"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BirthDate">Date Of Birth</label>
+        <input asp-for="BirthDate" class="form-control" type="date" />
+        <span asp-validation-for="BirthDate"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Tickets">Number Of Tickets</label>
+        <input asp-for="Tickets" class="form-control" placeholder="enter number of tickets"/>
+        <span asp-validation-for="Tickets"></span>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>

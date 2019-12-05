@@ -1,0 +1,31 @@
+﻿@model ReviewViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<form asp-controller="Home" asp-action="Index" method="get">
+
+    <label asp-for="LastName">Last Name: </label>
+    <input asp-for="LastName" />
+    <button>Search</button>
+
+</form>*@
+<img src="~/images/forDummies.png" />
+<br />
+<h2>Past Reviews</h2>
+@foreach (Review r in Model.Reviews)
+{
+    <div class="post">
+        <div>
+            @r.ReviewTitle
+            @for (int rating = r.Rating; rating > 0; rating--)
+            {
+                <img src="~/images/star.png" />
+            }
+        </div>
+        <h5>by @r.Username on @r.ReviewDate.ToShortDateString()</h5>
+        <h5>@r.ReviewText</h5>
+        <br />
+    </div>
+}
+<a href="/home/newreview">Submit a new review</a>

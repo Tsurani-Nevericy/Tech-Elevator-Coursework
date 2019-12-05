@@ -1,0 +1,34 @@
+﻿@model Review
+
+@{
+    ViewData["Title"] = "New Review";
+    List<SelectListItem> starCount = new List<SelectListItem>
+    {
+        new SelectListItem { Text = "1/5", Value = "1" },
+        new SelectListItem { Text = "2/5", Value = "2" },
+        new SelectListItem { Text = "3/5", Value = "3" },
+        new SelectListItem { Text = "4/5", Value = "4" },
+        new SelectListItem { Text = "5/5", Value = "5" }
+    };
+}
+
+<h2>New Book Review</h2>
+<form asp-controller="Home" asp-action="NewReview" method="post">
+    <div>
+        <label asp-for="Username">Enter your name:</label>
+        <input asp-for="Username" />
+    </div>
+    <div>
+        <label asp-for="Rating">How many stars:</label>
+        <select asp-for="Rating" asp-items="starCount"></select>
+    </div>
+    <div>
+        <label asp-for="ReviewTitle">Provide a Title:</label>
+        <input asp-for="ReviewTitle" />
+    </div>
+    <div>
+        <label asp-for="ReviewText">Review:</label>
+        <input asp-for="ReviewText" />
+    </div>
+    <button>Post Review</button>
+</form>

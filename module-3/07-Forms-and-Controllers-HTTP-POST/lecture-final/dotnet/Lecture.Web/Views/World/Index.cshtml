@@ -1,0 +1,32 @@
+﻿@*7. Bind the view to a model*@
+@model IList<Country>
+
+@* 2. Create the empty Index view to be used by the WorldController/Index action. *@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Code</td>
+            <td>Name</td>
+            <td>Continent</td>
+            <td>Head of State</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var country in Model)
+        {
+            <tr>
+                <td><a asp-controller="world" asp-action="citiesbycountry" asp-route-code="@country.Code">@country.Code</a></td>
+                <td>@country.Name</td>
+                <td>@country.Continent</td>
+                <td>@country.HeadOfState</td>
+            </tr>
+        }
+    </tbody>
+</table> 

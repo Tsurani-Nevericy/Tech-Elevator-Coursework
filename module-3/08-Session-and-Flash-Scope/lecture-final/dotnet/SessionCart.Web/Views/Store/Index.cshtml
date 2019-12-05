@@ -1,0 +1,44 @@
+﻿@model IList<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+<style>
+    td {
+        width: 200px;
+    }
+
+    tr:first-child td {
+        font-weight: bold;
+    }
+</style>
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Cost</td>
+        <td></td>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Cost.ToString("C")</td>
+            <td>
+                <form asp-action="AddToCart" asp-controller="Store" method="post">
+                    @* Create a hidden input field to store the product id *@
+                    <input type="hidden" asp-for="@product.Id" />
+                    <input type="hidden" name="quantity" value="10" />
+                    <button>Add to Cart</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

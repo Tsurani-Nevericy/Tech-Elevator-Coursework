@@ -1,0 +1,34 @@
+﻿@using TechElevator.Web.Models;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewData["Title"] = "Hello";
+
+    Message message = (Message)ViewData["MyMessage"];
+
+    string GetMessage()
+    {
+        return ((Message)ViewData["MyMessage"]).MyMessage;
+    }
+}
+
+@if (message.Count < 5)
+{
+    for (int i = 0; i < message.Count; i++)
+    {
+        <h2>ViewData: @GetMessage()</h2>
+    }
+
+    for (int i = 0; i < message.Count; i++)
+    {
+        <h2>ViewBag: @ViewBag.Message.MyMessage</h2>
+    }
+}
+else
+{
+    <h2>Reduce your count size.</h2>
+}
+
+<h1>Cameron has no faith</h1>
+

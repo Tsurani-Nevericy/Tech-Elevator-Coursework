@@ -1,0 +1,33 @@
+﻿@model CitySearch
+
+
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+<h2>SearchResult</h2>
+@*5. Display the search result page. *@
+
+<p>You search for cities in @Model.CountryCode in the district of @(Model.District). There are @Model.Results.Count results that came back.</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>District</td>
+            <td>Population</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var city in Model.Results)
+        {
+            <tr>
+                <td>@city.CityId</td>
+                <td>@city.Name</td>
+                <td>@city.District</td>
+                <td>@city.Population</td>
+            </tr>
+        }
+    </tbody>
+</table>

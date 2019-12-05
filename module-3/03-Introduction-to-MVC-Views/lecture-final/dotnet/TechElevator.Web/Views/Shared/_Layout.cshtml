@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>    
+    <nav>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Index</a></li>
+            <li><a asp-controller="Home" asp-action="Greeting">Greeting</a></li>
+            <li><a asp-controller="Calculators" asp-action="Index">Metric/Imperial Calculator</a></li>
+        </ul>
+    </nav>
+
+    @RenderBody()
+</body>
+</html>

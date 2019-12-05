@@ -1,0 +1,34 @@
+﻿@model List<Post>
+
+@section title {
+    Hey Y'All
+}
+
+<partial name="_Nav" for="@Model" />
+
+<div id="posts">
+    <div id="header">
+        <img src="http://www.stickpng.com/assets/images/5a4e432a2da5ad73df7efe7a.png" />
+    </div>
+    @foreach (var post in Model)
+    {
+        <div class="post">
+            <div class="post-header">
+                <img class="user-image" src="@post.UserImage" />
+                <span class="user-name">@post.Username</span>
+            </div>
+            <img class="post-image" src="@post.PostImage" />
+            <div class="post-content">
+                @{
+                    string heartClass = (post.HasBeenLiked) ? "fas" : "far";
+                }
+                <i class="heart @heartClass fa-heart"></i>
+                <p class="likes">@post.Likes likes</p>
+                <p class="caption"><span>@post.Username</span> @post.Caption</p>
+
+            </div>
+        </div>
+    }
+</div>
+
+<partial name="_Nav" for="@Model" />

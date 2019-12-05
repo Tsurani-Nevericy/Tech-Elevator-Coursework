@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Modify Registration</title>    
+
+    <link rel="stylesheet" href="css/site.css" />
+
+    <script src="bmv.js"></script>
+    <script src="update.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h3>Modifying Registration #<span id="id"></span></h3>
+        <form>
+            <div><label>License Plate:</label><input type="text" name="plate"> (Currently <span id="plate"></span>)</div>
+            <div><label>Owner's Name:</label><input type="text" name="owner"> (Currently <span id="owner"></span>)</div>
+            <div><label>Vehicle Make:</label><input type="text" name="make"> (Currently <span id="make"></span>)</div>
+            <div><label>Vehicle Model:</label><input type="text" name="model"> (Currently <span id="model"></span>)</div>
+            <div><label>Vehicle Year:</label><input type="text" name="year"> (Currently <span id="year"></span>)</div>
+            <button type="submit">Save Changes</button>
+            <a href="/"><button type="button">Cancel</button></a>
+            <div id="errorMessage"></div>
+        </form>
+    </div>
+</body>
+</html>

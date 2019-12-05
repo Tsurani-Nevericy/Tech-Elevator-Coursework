@@ -1,0 +1,32 @@
+﻿@model IList<City>
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <a asp-controller="city" asp-action="new">Add New City</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>District</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var city in Model)
+            {
+                <tr>
+                    <td>@city.CityId</td>
+                    <td>@city.Name</td>
+                    <td>@city.CountryCode</td>
+                    <td>@city.District</td>
+                    <td>@city.Population.ToString("N0")</td>
+                </tr>
+            }
+        </tbody>
+    </table>

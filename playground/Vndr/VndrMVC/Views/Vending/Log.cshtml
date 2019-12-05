@@ -1,0 +1,61 @@
+﻿@section StyleSheet {
+    <link rel="stylesheet" href="~/css/Log.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+}
+
+@section Scripts {
+    <script src="~/js/Log.js" defer></script>
+}
+
+@section Title {
+    Log
+}
+
+@model VndrMVC.LogViewModel
+
+<div class="container" id="logBox">
+    <div class="logHeading">
+        <div class="logTitle">History</div>
+        <div class="logDropDowns">
+            <select id="operations">
+                <option value="all">All Operation Types</option>
+                @foreach (var operation in Model.OperationTypes)
+                {
+                <option value="@operation.Id">@operation.Name</option>
+                }
+            </select>
+        </div>
+        <div class="logDropDowns">
+            <select id="users">
+                <option value="all">All Users</option>
+                @foreach (var user in Model.Users)
+                {
+                <option value="@user.Id">@(user.FirstName + " " + user.LastName)</option>
+                }
+            </select>
+        </div>
+        <div class="logDropDowns">
+            <select id="products">
+                <option value="all">All Products</option>
+                @foreach (var product in Model.Products)
+                {
+                <option value="@product.Id">@product.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="row headerRow">
+
+        <div class="col-sm-1"></div>
+        <div class="col-3 content">
+            Date
+        </div>
+        <div class="col-4 transaction content">
+            Action
+        </div>
+        <div class="col-2 amount content">
+            Amt
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>

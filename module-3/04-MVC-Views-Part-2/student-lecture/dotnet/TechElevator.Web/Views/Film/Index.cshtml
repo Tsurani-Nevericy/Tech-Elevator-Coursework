@@ -1,0 +1,19 @@
+﻿@using TechElevator.Web.Models
+@model FilmIndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h2>Elizabeth is @Model.Age</h2>*@
+<ul>
+    @{
+        foreach (var movie in Model.Films)
+        {
+            <li><a asp-controller="Film" 
+                 asp-action="Detail" 
+                 asp-route-id="@movie.Id">@movie.Name</a></li>
+        }
+    }
+</ul>
+

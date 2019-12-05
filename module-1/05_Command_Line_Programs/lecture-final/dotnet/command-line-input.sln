@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KilometerConverter", "KilometerConverter\KilometerConverter.csproj", "{BDC67FD7-E148-476D-A9B9-8465C9FBB0B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnluckyWheel", "UnluckyWheel\UnluckyWheel.csproj", "{ADC7A839-2109-482F-9AF8-C0BC15DCD4CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDC67FD7-E148-476D-A9B9-8465C9FBB0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC67FD7-E148-476D-A9B9-8465C9FBB0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC67FD7-E148-476D-A9B9-8465C9FBB0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC67FD7-E148-476D-A9B9-8465C9FBB0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADC7A839-2109-482F-9AF8-C0BC15DCD4CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADC7A839-2109-482F-9AF8-C0BC15DCD4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC7A839-2109-482F-9AF8-C0BC15DCD4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADC7A839-2109-482F-9AF8-C0BC15DCD4CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AED35C6-3CA1-45E2-A772-15BD823326DE}
+	EndGlobalSection
+EndGlobal

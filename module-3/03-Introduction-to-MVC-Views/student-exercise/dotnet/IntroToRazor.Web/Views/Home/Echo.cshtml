@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Echo";
+    int count = (int)ViewData["count"];
+    string word = (string)ViewData["word"];
+}
+
+<nav id="page-options">
+    <ul>
+        <li><a asp-controller="Home" asp-action="Echo" asp-route-word="Echo" asp-route-count="10">Echo 10</a></li>
+        <li><a asp-controller="Home" asp-action="Echo" asp-route-word="Hello!" asp-route-count="20">Hello! 20</a></li>
+        <li><a asp-controller="Home" asp-action="Echo" asp-route-word="Goodbye!" asp-route-count="50">Goodbye! 50</a></li>
+    </ul>
+</nav>
++*
+<ul>
+    @for (; count > 0; count--)
+    {
+        <li style="font-size: @(count)px;">@word</li>
+    }

@@ -1,0 +1,31 @@
+﻿@*e. bind to the calculator model *@
+@model CalculatorModel
+
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+@* b. Create form that sends our data to CalculatorResult *@
+<form asp-controller="calculators" asp-action="result" method="get">
+
+    <div>
+        <label asp-for="NumberToConvert"></label>
+        <input type="number" asp-for="NumberToConvert" />
+    </div>
+
+    <div>
+        <label asp-for="StartingUnit"></label>
+        <select asp-for="StartingUnit" asp-items="CalculatorModel.Units"></select>
+    </div>
+
+    <div>
+        <label asp-for="EndingUnit"></label>
+        <select asp-for="EndingUnit" asp-items="CalculatorModel.Units"></select>
+    </div>
+
+    <div>
+        <input type="submit" value="Calculate" />
+    </div>
+</form>

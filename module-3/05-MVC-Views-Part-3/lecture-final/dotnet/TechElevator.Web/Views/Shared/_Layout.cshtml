@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@RenderSection("title", true)</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    @RenderSection("stylesheets", false)
+</head>
+<body>
+    <nav>
+    </nav>
+    @RenderBody()
+    @RenderSection("scripts", false)
+</body>
+</html>

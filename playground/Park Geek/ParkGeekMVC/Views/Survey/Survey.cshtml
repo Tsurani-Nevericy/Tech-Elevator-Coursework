@@ -1,0 +1,45 @@
+﻿@model SurveyViewModel
+
+@section Title {
+    Survey
+}
+<h2>Survey</h2>
+
+<form asp-controller="Home" asp-action="Survey" method="post">
+    <img src="~/img/logo.png" />
+    <div class="form-group">
+        <label asp-for="FavoriteParkCode">Favorite Park</label>
+        <select asp-for="FavoriteParkCode" asp-items="@Model.ParkList" class="form-control" placeholder="-choose your favorite park-"> </select>
+        <span asp-validation-for="FavoriteParkCode"></span>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="-enter email-" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <label asp-for="StateOfResidence">State Of Residence</label>
+        <select asp-for="StateOfResidence" asp-items="@Model.StateList" class="form-control" placeholder="-choose your state of residence-"> </select>
+        <span asp-validation-for="StateOfResidence"></span>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <label asp-for="ActivityLevel">Activity Level</label>
+        <p>
+            <label><input type="radio" asp-for="ActivityLevel" value="1" class="form-control"> 01</label>
+            <label><input type="radio" asp-for="ActivityLevel" value="2" class="form-control"> 02</label>
+            <label><input type="radio" checked asp-for="ActivityLevel" value="3" class="form-control"> 03</label>
+            <label><input type="radio" asp-for="ActivityLevel" value="4" class="form-control"> 04</label>
+            <label><input type="radio" asp-for="ActivityLevel" value="5" class="form-control"> 05</label>
+        </p>
+        <span asp-validation-for="ActivityLevel"></span>
+    </div>
+    <br />
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>

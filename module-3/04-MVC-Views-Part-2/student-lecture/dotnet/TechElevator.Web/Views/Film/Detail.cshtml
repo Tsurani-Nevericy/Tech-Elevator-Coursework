@@ -1,0 +1,22 @@
+﻿@using TechElevator.Web.Models
+@model Film
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<section>
+    Name: @Model.Name
+</section>
+<section>
+    Image: <img src="@Model.ImageUrl">
+</section>
+<section>
+    Length: @Model.Length
+</section>
+<section>
+    Year Released: @Model.YearReleased
+</section>
+
+<a asp-controller="Film" asp-action="Index">Go Back</a>
+

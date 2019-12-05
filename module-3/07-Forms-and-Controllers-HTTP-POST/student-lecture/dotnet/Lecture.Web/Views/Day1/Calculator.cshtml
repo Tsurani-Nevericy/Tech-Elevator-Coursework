@@ -1,0 +1,23 @@
+﻿@model Calculator
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+@*b. Create a form that sends our data to calculatorresult*@
+<form asp-controller="day1" asp-action="calculatorresult">
+
+    <label asp-for="NumberToConvert"></label>
+    <input type="number" asp-for="NumberToConvert" />
+
+    <label asp-for="StartingUnit"></label>   @*Our units to select from *@
+    <select asp-for="StartingUnit" asp-items="Calculator.Units"></select>
+
+    <label asp-for="EndingUnit"></label>    @* Our units to select from *@
+    <select asp-for="EndingUnit" asp-items="Calculator.Units"></select>
+
+
+
+    <input type="submit" value="Calculate" />
+</form>

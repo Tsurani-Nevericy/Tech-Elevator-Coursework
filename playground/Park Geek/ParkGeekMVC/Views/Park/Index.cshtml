@@ -1,0 +1,19 @@
+﻿@model ParkViewModel
+@using ParkGeek.DAL.Models;
+@section Title {
+    National Park Geek
+}
+
+Park Index
+
+<a asp-controller="user" asp-action="logout">Logout</a>
+@foreach (Park p in Model.ParkList)
+{
+    <a href="#">
+        <img src="~/img/parks/@(p.ParkCode.ToLower()).jpg" />
+    </a>
+    <a href="#">
+        <h2>@p.ParkName</h2>
+    </a>
+    <p>@p.ParkDescription</p>
+}
